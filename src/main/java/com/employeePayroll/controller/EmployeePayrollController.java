@@ -45,7 +45,7 @@ public class EmployeePayrollController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<ResponseDTO> addEmployeePayrollData(@Validated  @RequestBody EmployeePayrollDTO emppayrollDTO) {
+	public ResponseEntity<ResponseDTO> addEmployeePayrollData(@Valid  @RequestBody EmployeePayrollDTO emppayrollDTO) {
 		EmployeePayrollData employeePayrolldata=null;
 		employeePayrolldata = employeepayrollService.createEmployeePayrollData(emppayrollDTO);
 		ResponseDTO responseDto = new ResponseDTO("Employee created successfully", employeePayrolldata);
@@ -55,7 +55,7 @@ public class EmployeePayrollController {
 		
 	
 	@PutMapping("/update/{empId}")
-	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@RequestBody EmployeePayrollDTO emppayrollDTO, @Validated @PathVariable("empId") int empId){
+	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@RequestBody EmployeePayrollDTO emppayrollDTO, @Valid @PathVariable("empId") int empId){
 		EmployeePayrollData employeePayrolldata=null;
 		employeePayrolldata = employeepayrollService.updateEmployeePayrollData(empId, emppayrollDTO);
 		ResponseDTO responseDto = new ResponseDTO("Employee UpDated successfully", employeePayrolldata);
