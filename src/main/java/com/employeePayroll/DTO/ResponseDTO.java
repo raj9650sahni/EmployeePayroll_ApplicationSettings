@@ -1,6 +1,8 @@
 package com.employeePayroll.DTO;
 
-public class ResponseDTO {
+import lombok.Data;
+
+public @Data class ResponseDTO {
 	
 	private String messages;
 	private Object data;
@@ -11,21 +13,6 @@ public class ResponseDTO {
 		this.data = data;
 	}
 
-	public String getMessages() {
-		return messages;
-	}
-
-	public void setMessages(String messages) {
-		this.messages = messages;
-	}
-
-	public Object getData() {
-		return data;
-	}
-
-	public void setData(Object data) {
-		this.data = data;
-	}
 	
 
 }
